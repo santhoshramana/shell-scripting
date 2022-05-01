@@ -1,2 +1,0 @@
-HI this is first line added here from the new git hub account
-second line added from the intelliJ
