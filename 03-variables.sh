@@ -8,3 +8,6 @@ echo $b training
 echo $date
 
 # {} are needed if variable is combined with other words with out spaces
+
+DATE=2022-03-10
+echo Today date is $DATE
