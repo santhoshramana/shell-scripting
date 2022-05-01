@@ -2,4 +2,4 @@
 
 ls
 
-echo santhosh
+echo $santhosh
