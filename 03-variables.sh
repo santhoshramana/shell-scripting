@@ -1,7 +1,7 @@
 #!/bin/bash
 
 a=100
-b-devops
+b=devops
 
-echo {a}times
-ecoh $b
+echo ${a}times
+echo $b
