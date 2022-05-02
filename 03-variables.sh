@@ -12,7 +12,7 @@ echo $date
 DATE=2022-03-10
 echo Today date is $DATE
 
-DATE=$(date +%f)
+DATE=$(date +%F)
 echo Today date is $DATE
 
 dummy
