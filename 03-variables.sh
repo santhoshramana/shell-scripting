@@ -15,4 +15,7 @@ echo Today date is $DATE
 DATE=$(date +%F)
 echo Today date is $DATE
 
-dummy
+x=10
+y=20
+ADD=$(($x+$y))
+echo Add = $ADD
