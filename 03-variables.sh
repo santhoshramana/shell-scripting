@@ -19,3 +19,6 @@ x=10
 y=20
 ADD=$(($x+$y))
 echo Add = $ADD
+
+TIME=$date +%T
+echo the time is $TIME
