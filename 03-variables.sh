@@ -20,7 +20,14 @@ y=20
 ADD=$(($x+$y))
 echo Add = $ADD
 
+## Scalar
+c=10
+
+## Arrays
+c=(10 20 "small large")
+echo First Value of Array = ${c[0]}
+echo Third Value of Array = ${c[2]}
+echo All Values of Array = ${c[*]}
+
 TIME=$(date +%T)
 echo the time is $TIME
-
-chec
