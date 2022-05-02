@@ -14,3 +14,5 @@ echo Today date is $DATE
 
 DATE=$(date +%f)
 echo Today date is $DATE
+
+dummy
