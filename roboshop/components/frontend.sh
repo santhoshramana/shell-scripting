@@ -3,7 +3,7 @@
 USER_ID=$(id -u)
 if [  "$USER_ID" -ne 0 ]; then
   echo you should be an root user
-  exit
+  exit 1
 fi
 
 echo -e "\e[36m installing Nginx \e][0m"
