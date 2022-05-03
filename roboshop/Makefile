@@ -1,6 +1,6 @@
 frontend:
 	bash components/frontend.sh
 
-cart:
+carti:
 	bash components/cart.sh
 
