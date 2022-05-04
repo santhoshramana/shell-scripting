@@ -22,7 +22,7 @@ Print_Message() {
   b=20
 }
 
-stat() {
+STAT() {
   echo history r
   eturn 1
   echo tata
@@ -35,7 +35,7 @@ Print_Message DevOps
 echo "my First arugument in Main script = $1"
 echo "Value of b = $b"
 STAT
-echo Exit status of a function  stat = $?
+echo Exit status of a function  STAT = $?
 
 # note
 ##Functions
