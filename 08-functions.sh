@@ -29,3 +29,5 @@ echo "my First arugument in Main script = $1"
 echo "Value of b = $b"
 
 # note
+##Functions
+##variables
