@@ -31,14 +31,14 @@ Print "Cleanup old Nginx"
 rm -rf /usr/share/nginx/html/*
 StatCheck $?
 
-cd /usr/share/nginx/html/*
+cd /usr/share/nginx/html/
 
 Print "Extract Archive"
 unzip /tmp/frontend.zip $$ mv frontend-main/* . && mv static/* .
 StatCheck $?
 
 
-Print "UPdate the Roboshop Config"
+Print "Update the Roboshop Config"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 StatusCheck $?
 
