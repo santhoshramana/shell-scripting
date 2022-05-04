@@ -29,11 +29,18 @@ StatCheck $?
 
 Print "Cleanup old Nginx"
 rm -rf /usr/share/nginx/html/*
+StatCheck $?
+
 cd /usr/share/nginx/html/
-unzip /tmp/frontend.zip
+
+Print "Extract Archive"
+unzip /tmp/frontend.zip $$ mv frontend-main/* . && mv static/* .
+StatCheck $?
+
+
 mv frontend-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 StatusCheck $?
 
