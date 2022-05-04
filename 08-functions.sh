@@ -15,4 +15,7 @@
 Print_Message() {
   echo Hi,
   echo Good Day
-  echo Welcome to DevOps Training
+  echo Welcome to DevOpsraining
+}
+
+Print_Message
