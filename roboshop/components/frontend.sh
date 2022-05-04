@@ -25,7 +25,7 @@ StatCheck $?
 
 Print "Downloading Nginx Content"
 curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-StatusCheck $?
+StatCheck $?
 
 Print "Cleanup old Nginx"
 rm -rf /usr/share/nginx/html/*
