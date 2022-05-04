@@ -15,7 +15,12 @@
 Print_Message() {
   echo Hi,
   echo Good Day
-  echo Welcome to DevOpsraining
+  echo Welcome to $(1) Training
+  echo "my First argument is Function =$1"
 }
 
-Print_Message
+Print_Message DevOps
+
+echo "my First arugument in Main script =$1"
+
+# note
