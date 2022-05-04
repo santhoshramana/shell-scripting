@@ -46,4 +46,4 @@ Print "starting Nginx"
 systemctl restart nginx && systemctl && enable nginx
 StatusCheck $?
 
-test
+
