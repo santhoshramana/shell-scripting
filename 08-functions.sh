@@ -17,8 +17,15 @@ Print_Message() {
   echo Good Day
   echo Welcome to $(1) Training
   echo "my First argument is Function =$1"
+  a=20
   echo "Value of a = $a"
   b=20
+}
+
+stat() {
+  echo history r
+  eturn 1
+  echo tata
 }
 
 #Manin Prog
@@ -27,6 +34,8 @@ Print_Message DevOps
 
 echo "my First arugument in Main script = $1"
 echo "Value of b = $b"
+STAT
+echo Exit status of a function  stat = $?
 
 # note
 ##Functions
