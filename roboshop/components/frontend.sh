@@ -31,20 +31,17 @@ Print "Cleanup old Nginx"
 rm -rf /usr/share/nginx/html/*
 StatCheck $?
 
-cd /usr/share/nginx/html/
+cd /usr/share/nginx/html/*
 
 Print "Extract Archive"
 unzip /tmp/frontend.zip $$ mv frontend-main/* . && mv static/* .
 StatCheck $?
 
 
-mv frontend-main/* .
-mv static/* .
-
+Print "UPdate the Roboshop Config"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 StatusCheck $?
 
 Print "starting Nginx"
-systemctl restart nginx
+systemctl restart nginx && systemctl enable nginx
 StatusCheck $?
-systemctl enable nginx
