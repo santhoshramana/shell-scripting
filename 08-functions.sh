@@ -24,7 +24,7 @@ Print_Message() {
 
 STAT() {
   echo history r
-  eturn 1
+  return 1
   echo tata
 }
 
