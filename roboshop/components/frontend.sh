@@ -37,9 +37,8 @@ StatCheck $?
 cd /usr/share/nginx/html/
 
 Print "Extract Archive"
-unzip /tmp/frontend.zip &>>$LOG_FILE $$ mv frontend-main/* . &>>$LOG_FILE && mv static/*  &>>$LOG_FILE
+unzip /tmp/frontend.zip &>>$LOG_FILE  && mv frontend-main/* . &>>$LOG_FILE  && mv static/* &>>$LOG_FILE .
 StatCheck $?
-
 
 Print "Update the Roboshop Config"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
