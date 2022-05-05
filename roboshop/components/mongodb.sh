@@ -31,6 +31,6 @@ yum install -y mongodb-org &>>LOG_FILE
 StatCheck $?
 
 Print "Start MongoDB"
-systemctl enable mongod &>>LOG_FILE systemctl start mongod &>>LOG_FILE
+systemctl enable mongod &>>LOG_FILE && systemctl restart mongod &>>LOG_FILE
 StatCheck $?
 
