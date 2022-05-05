@@ -28,9 +28,9 @@ StatCheck $?
 
 Print "Install MongoDB"
 yum install -y mongodb-org &>>LOG_FILE
-Statcheck $?
+StatCheck $?
 
 Print "Start MongoDB"
 systemctl enable mongod &>>LOG_FILE systemctl start mongod &>>LOG_FILE
-Statcheck $?
+StatCheck $?
 
