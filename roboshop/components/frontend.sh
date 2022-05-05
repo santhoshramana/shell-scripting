@@ -42,10 +42,10 @@ StatCheck $?
 
 Print "Update the Roboshop Config"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
-StatusCheck $?
+StatCheck $?
 
 Print "starting Nginx"
 systemctl restart nginx &>>$LOG_FILE && systemctl enable nginx &>>$LOG_FILE
-StatusCheck $?
+StatCheck $?
 
 
