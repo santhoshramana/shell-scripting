@@ -22,8 +22,8 @@ Print "Download schema"
 curl -f -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>LOG_FILE
 StatCheck $?
 
-Print "Exrteact schema"
-cd /tmp && un zip mongodb.zip &>>LOG_FILE
+Print "Exrtact schema"
+cd /tmp && unzip mongodb.zip &>>LOG_FILE
 StatCheck $?
 
 Print "Load Schema"
