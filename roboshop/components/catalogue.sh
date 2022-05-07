@@ -24,9 +24,9 @@ rm -rf /home/${APP_USER}/catalogue &>>${LOG_FILE}
 StatCheck $?
 
 Print "Extracting Content"
-cd /home/roboshop &>>${LOG_FILE} && unzip -o /tmp/catalogue.zip &>>${LOG_FILE} && mv catalogue-main catalogue &>>${LOG_FILE}
+cd /home/${APP_USER} &>>${LOG_FILE} && unzip -o /tmp/catalogue.zip &>>${LOG_FILE} && mv catalogue-main catalogue &>>${LOG_FILE}
 StatCheck $?
 
 Print "Installing APP Dependencies"
-cd /home/roboshop/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
+cd /home/${APP_USER}/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
 StatCheck $?
