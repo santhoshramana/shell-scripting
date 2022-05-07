@@ -10,11 +10,25 @@ Print "Install MongoDB"
 yum install -y mongodb-org &>>LOG_FILE
 StatCheck $?
 
-Print "UPdate MongoDB Listen Address"
+Print "Update MongoDB Listen Address"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 StatCheck $?
 
 Print "Start MongoDB"
 systemctl enable mongod &>>LOG_FILE && systemctl restart mongod &>>LOG_FILE
 StatCheck $?
+
+Print "Download schema"
+curl -f -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>LOG_FILE
+StatCheck $?
+
+Print "Exrteact schema"
+cd /tmp && un zip mongodb.zip &>>LOG_FILE
+StatCheck $?
+
+Print "Load Schema"
+cd mongodb-main && mongo < catalogue.js &>>LOG_FILE && mongo < users.js &>>LOG_FILE
+StatCheck $?
+
+
 
