@@ -12,8 +12,11 @@ yum install nodejs gcc-c++ -y&>>${LOG_FILE}
 StatCheck $?
 
 Print "Add Application User"
-useradd ${APP_USER} &>>${LOG_FILE}
-StatCheck $?
+id ${APP_USER} &>>${LOG_FILE}
+if [ $? -ne 0 ]; then
+  useradd ${APP_USER} &>>${LOG_FILE}
+  StatCheck $?
+fi
 
 Print "App content Download"
 curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
