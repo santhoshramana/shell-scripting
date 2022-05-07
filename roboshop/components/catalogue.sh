@@ -8,11 +8,11 @@ curl -f -s -L https://rpm.nodesource.com/setup_lts.x | bash - &>>${LOG_FILE}
 StatCheck $?
 
 Print "Install NodeJS"
-yum install nodejs gcc-c++ -y&>>${LOG_FILE}
+yum install nodejs gcc-c++ -y &>>${LOG_FILE}
 StatCheck $?
 
 id ${APP_USER} &>>${LOG_FILE}
-if [ $? -ne 0 ]
+if [ $? -ne 0 ]; then
   Print "Add Application User"
   useradd ${APP_USER} &>>${LOG_FILE}
   StatCheck $?
