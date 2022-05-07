@@ -12,7 +12,7 @@ yum install nodejs gcc-c++ -y&>>${LOG_FILE}
 StatCheck $?
 
 id ${APP_USER} &>>${LOG_FILE}
-if [ $? -ne 0 ];
+if [ $? -ne 0 ]
   useradd ${APP_USER} &>>${LOG_FILE}
 fi
 StatCheck $?
