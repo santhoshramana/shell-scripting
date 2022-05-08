@@ -41,5 +41,5 @@ sed -i -e 's/MONGO_DNSNAME/mongodb.roboshopinternal/' /home/roboshop/catalogue/s
 StatCheck $?
 
 Print "Catalog Service"
-systemctl daemon-reload catalogue &>>${LOG_FILE} && systemctl restart catalogue &>>${LOG_FILE} && systemctl enable catalogue &>>${LOG_FILE}
+systemctl daemon-reload &>>${LOG_FILE} && systemctl restart catalogue &>>${LOG_FILE} && systemctl enable catalogue &>>${LOG_FILE}
 StatCheck $?
