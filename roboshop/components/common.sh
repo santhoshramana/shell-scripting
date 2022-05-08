@@ -60,7 +60,7 @@ NODEJS() {
   StatCheck $?
 
   Print "SystemD File"
-  sed -i -e 's/MONGO_DNSNAME/mongodb.roboshopinternal/' /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/catalog${COMPONENT}ue.service &>>${LOG_FILE}
+  sed -i -e 's/MONGO_DNSNAME/mongodb.roboshopinternal/' /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>>${LOG_FILE}
   StatCheck $?
 
   Print "Restart ${COMPONENT} Service"
