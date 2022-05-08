@@ -1,6 +1,6 @@
 #! /bin/bash
 
 source component/common.sh
-COMPONEN=cart
+COMPONENT=cart
 ## Function
 NODEJS
