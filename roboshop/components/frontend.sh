@@ -24,9 +24,11 @@ StatCheck $?
 Print "Roboshop Config file"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG_FILE
 for component in catalogue user cart ; do
+ echo -e "Updating $component Configuration"
  sed -i -e "/${component}/s/localhost/${component}.roboshopinternal/" /etc/nginx/default.d/roboshop.conf
+ StatCheck $?
 done
-StatCheck $?
+
 
 Print "starting Nginx"
 systemctl restart nginx &>>$LOG_FILE && systemctl enable nginx &>>$LOG_FILE
