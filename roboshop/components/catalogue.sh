@@ -1,6 +1,6 @@
 #! /bin/bash
 
 source component/common.sh
-COMPONEN=catalogue
+COMPONENT=catalogue
 ## Function
 NODEJS
