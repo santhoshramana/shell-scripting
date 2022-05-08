@@ -64,7 +64,7 @@ NODEJS() {
   StatCheck $?
 
   Print "Restart ${COMPONENT} Service"
-  systemctl daemon-reload &>>${LOG_FILE} && systemctl restart ${COMPONENT} &>>${LOG_FILE} && systemctl enable ${COMPONENT} &>>${LOG_FILE}
+  systemctl daemon-reload &>>${LOG_FILE} && systemctl start ${COMPONENT} &>>${LOG_FILE} && systemctl enable ${COMPONENT} &>>${LOG_FILE}
   StatCheck $?
 
 }
