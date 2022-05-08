@@ -8,7 +8,7 @@ url -L https://raw.githubusercontent.com/roboshop-devops-project/redis/main/redi
 StatCheck $?
 
 Print "Redis Install"
-yum intall redis -y &>>${LOG_FILE}
+yum install redis -y &>>${LOG_FILE}
 StatCheck $?
 
 Print "Updated redis config"
