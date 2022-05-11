@@ -7,7 +7,7 @@ curl -f -s -L -o curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubuse
 StatCheck $?
 
 
-Pring "MySQL"
+Print "MySQL"
 yum instasll mysql-community-server -y &>>LOG_FILE
 StatCheck $?
 
