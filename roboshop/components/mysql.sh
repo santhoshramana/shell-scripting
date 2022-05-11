@@ -7,7 +7,7 @@ curl -f -s -L -o curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubuse
 StatCheck $?
 
 
-Print "MySQL"
+Print "Install MySQL"
 yum install mysql-community-server -y &>>${LOG_FILE}
 StatCheck $?
 
