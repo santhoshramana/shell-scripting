@@ -32,7 +32,14 @@ if [ $? -eq 0 ]; then
   StatCheck $?
 fi
 
-----
+Print "Download Schema"
+curl -f -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip" &>>${LOG_FILE}
+StatCheck $?
 
+Print "Extract Schema"
+cd /tmp && unzip -o mysql.zip &>>${LOG_FILE}
+StatCheck $?
 
-sdsaadsadcas'd'
+Print "Load Schema"
+cd mysql-main && mysql -u root -pRoboShop@1 <shipping.sql &>>${LOG_FILE}
+StatCheck $?
