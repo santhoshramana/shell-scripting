@@ -15,12 +15,19 @@ Print "Start MySQL Service"
 systemctl enable mysqld &>>${LOG_FILE} && systemctl start mysqld &>>${LOG_FILE}
 StatCheck $?
 
-
 echo 'show databases' | mysql -uroot -pRoboShop@1 &>>${LOG_FILE}
 if [ 0 -ne $? ]; then
   Print "Changing Root Password"
   echo "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('RoboShop@1');" >/tmp/rootpass.sql
   DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
   mysql --connect-expired-password -uroot -p"${DEFAULT_ROOT_PASSWORD}" </tmp/rootpass.sql &>>${LOG_FILE}
+  StatCheck $?
+fi
+
+echo show plugins | mysql -uroot -pRoboShop@1 2>>${LOG_FILE} | grep validate_password &>>${LOG_FILE}
+if [ $? -eq 0 ]; then
+  Print "Uninstall the Plugin and validate"
+  echo 'uninstall plugin validate_password;' >/tmp/pass-validate.sql
+  mysql --connect-expired-password -uroot -pRoboShop@1 </tmp/pass-validate.sql  &>>${LOG_FILE}
   StatCheck $?
 fi
