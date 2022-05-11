@@ -8,7 +8,7 @@ StatCheck $?
 
 
 Print "MySQL"
-yum instasll mysql-community-server -y &>>LOG_FILE
+yum install mysql-community-server -y &>>LOG_FILE
 StatCheck $?
 
 Print "Start Mysql"
