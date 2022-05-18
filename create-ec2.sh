@@ -8,8 +8,8 @@ fi
 COMPONENT=$1
 ZONE_ID="Z083275214GG1KG246KTC"
 
-
-AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-7-DevOps-Practice" | jq '.Images[].ImageId' | sed -e 's/"//g')
+AMI_ID="ami-0bb6af715826253bf"
+#AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-7-DevOps-Practice" | jq '.Images[].ImageId' | sed -e 's/"//g')
 SGID=$(aws ec2 describe-security-groups --filters Name=group-name,Values=allow-all-from-public | jq '.SecurityGroups[].Groupid' | sed -e 's/"//g')
 
 echo $AMI_ID
